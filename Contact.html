@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Fit N Fab - Place to be fit</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body background="bgfit.jpg" width: 50%>
+
+<!-- Navigation -->
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top">FitNFab</a>
+        </li>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="myAccount.html">My Account</a>
+        </li>
+        <li>
+            <a href="myCurrPlan.html">My Plan</a>
+        </li>
+        <li>
+            <a href="DietConsumed.html">Diet Consumed</a>
+        </li>
+        <li>
+            <a href="Contact.html">Contact</a>
+        </li>
+        <li>
+            <a href="../login.html">Logout</a>
+        </li>
+    </ul>
+</nav>
+
+
+<h1 center>Choose your Expert</h1>
+
+<div id="tabs">
+    <div id="nav">
+        
+        <p>Dietician:<input type="radio" id="Dietician" name="rad" value="Dietician" class="div1"  /></p>
+        <p>Nutritionist:<input type="radio" id="Nutritionist" name="rad" value="Nutritionist" class="div2" /></p>
+        <p>Fitness Expert:<input type="radio" id="Expert" name="rad" value="Fitness Expert" class="div3" /></p>
+        <p>
+        
+    </div>
+    
+    <div id="div1" class="tab">
+        <select id="Dname" name="Dname">
+            <option>Choose Dietician</option>
+        </select>
+        
+    </div>
+    
+    <div id="div2" class="tab">
+        
+        <select id="Nname" name="Nname">
+            <option>Choose Nutritionist</option>
+        </select>
+        
+    </div>
+    
+    <div id="div3" class="tab">
+        <select id="Ename" name="Ename">
+            <option>Choose Fitness Experts</option>
+        </select>
+    </div>
+</div>
+
+<b><p id="expertConf"></p></b>
+
+<script src="jquery-1.11.1.min.js"></script>
+<script src="script.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+    (function(){
+     var tabs =document.getElementById('tabs');
+     var nav = tabs.getElementsByTagName('input');
+     
+     /*
+      * Hide all tabs
+      */
+     function hideTabs(){
+     var tab = tabs.getElementsByTagName('div');
+     for(var i=0;i<=nav.length;i++){
+     if(tab[i].className == 'tab'){
+     tab[i].className = tab[i].className + ' hide';
+     }
+     }
+     }
+     
+     /*
+      * Show the clicked tab
+      */
+     function showTab(tab){
+     document.getElementById(tab).className = 'tab'
+     }
+     
+     hideTabs(); /* hide tabs on load */
+     
+     /*
+      * Add click events
+      */
+     for(var i=0;i<nav.length;i++){
+     nav[i].onclick = function(){
+     
+     hideTabs();
+     showTab(this.className);
+     
+     }
+     };
+     var allRadios=document.getElementById('rad');
+     var booRadio;
+     for(var x = 0; x < allRadios.length; x++){
+     
+     allRadios[x].onclick = function() {
+     if(booRadio == this){
+     this.checked = false;
+     booRadio = null;
+     }else{
+     booRadio = this;
+     }
+     
+     }
+     }
+     })();
+    </script>
+
+
+</div>
+
+
+
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.2456982209355!2d-121.88020180000001!3d37.3366915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccb8b83927cf%3A0x1d4020d0a54445fb!2s1+Washington+Square%2C+San+Jos%C3%A9+State+University%2C+San+Jose%2C+CA+95112!5e0!3m2!1sen!2sus!4v1417466469819" width="50%" height="50%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <br />
+        <small>
+            <a href="https://www.google.com/maps/place/1+Washington+Square,+San+Jos%C3%A9+State+University,+San+Jose,+CA+95112/@37.3366915,-121.8802018,17z/data=!3m1!4b1!4m2!3m1!1s0x808fccb8b83927cf:0x1d4020d0a54445fb"></a>
+        </small>
+        </iframe>
+    </section>
+
+    <!-- Footer -->
+    <!--<footer> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Fit N Fab Office</strong>
+                    </h4>
+                    <p>One Washington Square<br>San Jose , CA 95112</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (408) 123-4567</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:contact@fitnfab.com">contact@fitnfab.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; FitNFab 2014</p>
+                </div>
+            </div>
+        </div>
+        
+        
+   <!-- </footer> -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>

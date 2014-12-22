@@ -22,7 +22,8 @@
    // $myusername = mysql_real_escape_string($myusername);
    // $mypassword = mysql_real_escape_string($mypassword);
     $username=$_SESSION['login_user'];
-    $sql="SELECT * FROM $tbl_name where Account_Id='$username'";
+    $sql="SELECT account.Account_Id , account.Customer_FName as First_Name, account.Customer_LName as Last_Name, Initial_Weight, Height, TIMESTAMPDIFF(year,account.Date_Of_Birth,CURDATE()) AS Age, (((account.Initial_Weight*0.45)/(account.Height/100))/(account.Height/100)) as BMI FROM account where account.Account_Id='$username'";
+    //$sql="SELECT * FROM $tbl_name where Account_Id='$username'";
     $result=mysql_query($sql);
     // Mysql_num_row is counting table row
     $count=mysql_num_rows($result);
